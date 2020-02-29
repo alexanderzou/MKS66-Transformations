@@ -10,7 +10,7 @@ z0  z1  ... zn
 import math
 
 def make_translate( x, y, z ):
-    return [[1,0,0,x],[0,1,0,y],[0,0,1,z],[0,0,0,1]]
+    return [[1,0,0,0],[0,1,0,0],[0,0,1,0],[x,y,z,1]]
 
 def make_scale( x, y, z ):
     return [[x,0,0,0],[0,y,0,0],[0,0,z,0],[0,0,0,1]]
@@ -19,23 +19,23 @@ def make_rotX( theta ):
     sin = math.sin(math.radians(theta))
     cos = math.cos(math.radians(theta))
     return [[1,0,0,0],
-            [0,cos,-1*sin,0],
-            [0,sin,cos,0],
+            [0,cos,sin,0],
+            [0,-1*sin,cos,0],
             [0,0,0,1]]
 
 def make_rotY( theta ):
     sin = math.sin(math.radians(theta))
     cos = math.cos(math.radians(theta))
-    return [[cos,0,sin,0],
+    return [[cos,0,-1*sin,0],
             [0,1,0,0],
-            [-1*sin,0,cos,0],
+            [sin,0,cos,0],
             [0,0,0,1]]
 
 def make_rotZ( theta ):
     sin = math.sin(math.radians(theta))
     cos = math.cos(math.radians(theta))
-    return [[cos,-1*sin,0,0],
-            [sin, cos, 0, 0],
+    return [[cos,sin,0,0],
+            [-1*sin, cos, 0, 0],
             [0,0,1,0],
             [0,0,0,1]]
 
