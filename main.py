@@ -9,7 +9,5 @@ edges = []
 transform = new_matrix()
 points = new_matrix()
 
-
-
-#parse_file( 'script', edges, transform, screen, color )
+parse_file( 'script', edges, transform, screen, color )
 parse_file( 'pic.txt', edges, transform, screen, color )
